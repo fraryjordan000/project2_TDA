@@ -9,3 +9,95 @@ html, body {
     height: 100%;
 }
 
+#listContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.listObject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: mintcream;
+    background-color: #3596f3;
+    border-radius: 5px;
+    width: 45%;
+    height: 35px;
+    cursor: pointer;
+    margin: 2px 0;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.listObject:hover > i {
+    visibility: visible;
+}
+
+.listObject > span {
+    width: 100%;
+}
+
+.listObject > i {
+    display: flex;
+    align-items: center;
+
+    visibility: hidden;
+    padding: 0px 10px;
+    height: 100%;
+}
+
+.listObject > i:hover {
+    color: crimson;
+    background-color: #2978c2;
+    border-radius: 5px;
+}
+
+.listObject:active {
+    background-color: #3aa9f4;
+}
+
+.page-content-1 {
+    text-align: center;
+}
+
+.page-content-2 {
+    text-align: center;
+}
+
+#addList {
+    position: absolute;
+    margin: 0 20px 20px 0;
+    bottom: 0;
+    right: 0;
+    background-color: #3f51b5;
+    color: mintcream;
+}
+
+.addList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 25%;
+    height: 125px;
+    background-color: #3f51b5;
+    border-radius: 5px;
+    color: #fdfdfe;
+}
+
+.addList button {
+    width: 35px;
+    height: 20px;
+}

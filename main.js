@@ -1,17 +1,9 @@
 
-//Add element
-function addElement(parentId, elementTag, elementId, html) {
-    // Adds an element to the document
-    var p = document.getElementById(parentId);
-    var newElement = document.createElement(elementTag);
-    newElement.setAttribute('id', elementId);
-    newElement.innerHTML = html;
-    p.appendChild(newElement);
-}
+function newList() {
+    let listName = document.getElementById('listName').value;
 
-//Remove element
-function removeElement(elementId) {
-    // Removes an element from the document
-    var element = document.getElementById(elementId);
-    element.parentNode.removeChild(element);
+    if(listName.length > 0) {
+        listMaster.push({id: listMaster.length, title: listName.title});
+        addList(listMaster.length, listName);
+    }
 }
