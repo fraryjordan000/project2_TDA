@@ -15,7 +15,11 @@ class Data {
 }
 
 var listMaster;
-let listContainer = document.getElementById('listContainer');
+var listContainer;
+
+function loadContainer() {
+    listContainer = $('#listContainer');
+}
 
 function loadLists() {
     if(Data.getList(0) != null) {
@@ -24,15 +28,19 @@ function loadLists() {
         listMaster = [];
     }
 
-    for(let i in listMaster){
-        addList(i, listMaster[i].title);
-    }
+    reloadLists();
 }
 
 function unloadLists() {
     Data.saveList(0, listMaster);
 }
 
+function reloadLists() {
+    for(let i in listMaster){
+        addList(i, listMaster[i].title);
+    }
+}
+
 function addList(index, title) {
-    listContainer.innerHTML += `<div id="LO${listContainer[index].id}" class="listObject"><span onclick="console.log('Go to List View')">${title}</span> <i class="material-icons" onclick="console.log('delete')">delete</i></div>`;
+    listContainer.append(`<div id="LO${listMaster[index].id}" class="listObject"><span onclick="">${title}</span> <i class="material-icons" onclick="rmList(${index})">delete</i></div>`);
 }
