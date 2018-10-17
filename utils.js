@@ -47,7 +47,7 @@ function reloadLists() {
 function reloadTasks() {
     $('#taskContainer').children('div').remove();
     for(let i in listMaster[selectedList].tasks) {
-        addTask(i, listMaster[selectedList].tasks[i].name);
+        addTask(i, listMaster[selectedList].tasks[i].name, listMaster[selectedList].tasks[i].state);
     }
     selectedTask = undefined;
 }
@@ -56,6 +56,12 @@ function addList(index, title) {
     listContainer.append(`<div id="LO${listMaster[index].id}" class="listObject"><span onclick="taskTab(${index})">${title}</span> <i class="material-icons" onclick="rmList(${index})">delete</i></div>`);
 }
 
-function addTask(index, name) {
-    taskContainer.append(`<div id="T${index}" class="task" onclick="selectTask(${index})"><span>${name}</span><i class="material-icons">check</i></div>`);
+function addTask(index, name, state) {
+    let value;
+    if(state){
+        value = "check_box";
+    } else {
+        value = "check_box_outline_blank";
+    }
+    taskContainer.append(`<div id="T${index}" class="task" onclick="selectTask(${index})"><span>${name}</span><i class="material-icons" onclick="checked(${index})">${value}</i></div>`);
 }

@@ -148,11 +148,8 @@ html, body {
 
 .task i {
     margin-right: 10px;
-    visibility: hidden;
 }
 
 .taskSelected {
     background-color: #ddd;
-    width: 46%;
-    height: 33px;
 }

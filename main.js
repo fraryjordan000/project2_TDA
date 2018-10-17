@@ -71,3 +71,8 @@ function selectTask(index) {
         $('#taskSelection').html('Selected: ' + listMaster[selectedList].tasks[selectedTask].name);
     }
 }
+
+function checked(index) {
+    listMaster[selectedList].tasks[index].state = !(listMaster[selectedList].tasks[index].state);
+    reloadTasks();
+}
