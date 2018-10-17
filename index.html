@@ -51,6 +51,7 @@
             <section class="mdl-layout__tab-panel" id="fixed-tab-2">
                 <div class="page-content-2">
                     <h3 id="listTitle">No List Selected</h1>
+                    <p>(Click task to select it)</p>
                     <div id="taskContainer">
                         <!-- <div id="T0" class="task" onclick="selectTask(0)">Task1</div> -->
                     </div>
@@ -58,7 +59,7 @@
                 <div class="editTask">
                     <h4><u>Edit Task</u></h4>
                     <p id="taskSelection">Selected: None</p>
-                    <span>Change Name: <input type="text" /> <button onclick="">Edit</button></span>
+                    <span>Change Name: <input id="newTaskName" type="text" /> <button onclick="editName()">Edit</button></span>
                     <div>Or</div>
                     <button onclick="rmTask()">Delete Selected Task</button>
                 </div>

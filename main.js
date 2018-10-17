@@ -76,3 +76,11 @@ function checked(index) {
     listMaster[selectedList].tasks[index].state = !(listMaster[selectedList].tasks[index].state);
     reloadTasks();
 }
+
+function editName() {
+    let newName = document.getElementById('newTaskName').value;
+
+    listMaster[selectedList].tasks[selectedTask].name = newName;
+    document.getElementById('newTaskName').value = "";
+    reloadTasks();
+}
