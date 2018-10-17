@@ -31,6 +31,12 @@ $('#taskName').on('keydown', function(e) {
     }
 });
 
+$('#newTaskName').on('keydown', function(e) {
+    if(e.which == 13) {
+        editName();
+    }
+});
+
 function taskTab(index) {
     document.getElementById('tab-link-2').click();
     selectedList = index;
