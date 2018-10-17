@@ -69,9 +69,5 @@ function selectTask(index) {
         }
         selectedTask = index;
         $('#taskSelection').html('Selected: ' + listMaster[selectedList].tasks[selectedTask].name);
-    } else if(($('#T'+index).attr('class')).search('done') == -1) {
-        $('#T'+selectedTask).addClass('done');
-    } else if(($('#T'+index).attr('class')).search('done') == -1) {
-        $('#T'+selectedTask).removeClass('taskSelected');
     }
 }
