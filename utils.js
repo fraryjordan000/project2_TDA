@@ -16,9 +16,11 @@ class Data {
 
 var listMaster;
 var listContainer;
+var taskContainer;
 
-function loadContainer() {
+function loadContainers() {
     listContainer = $('#listContainer');
+    taskContainer = $('#taskContainer');
 }
 
 function loadLists() {
@@ -36,11 +38,24 @@ function unloadLists() {
 }
 
 function reloadLists() {
+    $('#listContainer').children('div').remove();
     for(let i in listMaster){
         addList(i, listMaster[i].title);
     }
 }
 
+function reloadTasks() {
+    $('#taskContainer').children('div').remove();
+    for(let i in listMaster[selectedList].tasks) {
+        addTask(i, listMaster[selectedList].tasks[i].name);
+    }
+    selectedTask = undefined;
+}
+
 function addList(index, title) {
-    listContainer.append(`<div id="LO${listMaster[index].id}" class="listObject"><span onclick="">${title}</span> <i class="material-icons" onclick="rmList(${index})">delete</i></div>`);
+    listContainer.append(`<div id="LO${listMaster[index].id}" class="listObject"><span onclick="taskTab(${index})">${title}</span> <i class="material-icons" onclick="rmList(${index})">delete</i></div>`);
+}
+
+function addTask(index, name) {
+    taskContainer.append(`<div id="T${index}" class="task" onclick="selectTask(${index})"><span>${name}</span><i class="material-icons">check</i></div>`);
 }
