@@ -63,5 +63,5 @@ function addTask(index, name, state) {
     } else {
         value = "check_box_outline_blank";
     }
-    taskContainer.append(`<div id="T${index}" class="task" onclick="selectTask(${index})"><span>${name}</span><i class="material-icons" onclick="checked(${index})">${value}</i></div>`);
+    taskContainer.append(`<div id="T${index}" class="task"><span onclick="selectTask(${index})">${name}</span><i class="material-icons" onclick="checked(${index})">${value}</i></div>`);
 }

@@ -69,11 +69,44 @@ function selectTask(index) {
         }
         selectedTask = index;
         $('#taskSelection').html('Selected: ' + listMaster[selectedList].tasks[selectedTask].name);
+    } else {
+        $('#T'+index).removeClass('taskSelected');
+        
+        selectedTask = undefined;
+        $('#taskSelection').html('Selected: None');
     }
 }
 
 function checked(index) {
     listMaster[selectedList].tasks[index].state = !(listMaster[selectedList].tasks[index].state);
+    reloadTasks();
+}
+
+//Due to a strange error, multiple passes must be made to remove all marked tasks
+function removeChecks() {
+    let done = false;
+    while(done == false) {
+        if(listMaster[selectedList].tasks.length > 1) {
+            for(let i in listMaster[selectedList].tasks) {
+                if(listMaster[selectedList].tasks[i].state){
+                    listMaster[selectedList].tasks.splice(i, 1);
+                }
+            }
+            reloadTasks();
+            for(let i in listMaster[selectedList].tasks) {
+                if(listMaster[selectedList].tasks[i].state == false){
+                    done = true;
+                } else {
+                    done = false;
+                    break;
+                }
+            }
+        } else {
+            listMaster[selectedList].tasks = [];
+            done = true;
+        }
+    }
+    
     reloadTasks();
 }
 

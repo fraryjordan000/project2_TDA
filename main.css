@@ -9,6 +9,10 @@ html, body {
     height: 100%;
 }
 
+button {
+    outline: none;
+}
+
 #listContainer {
     display: flex;
     flex-direction: column;
@@ -81,7 +85,7 @@ html, body {
     color: mintcream;
 }
 
-.addList, .editTask {
+.addList, .addTask, .editTask {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,14 +99,24 @@ html, body {
     color: #fdfdfe;
 }
 
-.addList {
+.addList, .addTask {
     right: 0;
     bottom: 0;
 }
 
-.addList button, .editTask > span > button {
+.addList button,
+.addTask > span > button,
+.editTask > span > button {
     width: 35px;
     height: 20px;
+}
+
+.addTask > button {
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
 }
 
 .editTask {
@@ -112,7 +126,9 @@ html, body {
 
 .editTask > button {
     width: 150px;
-    height: 20px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
 }
 
 #taskContainer {
@@ -143,7 +159,11 @@ html, body {
 }
 
 .task span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .task i {
