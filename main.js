@@ -35,6 +35,8 @@ function taskTab(index) {
     document.getElementById('tab-link-2').click();
     selectedList = index;
     $('#listTitle').html(listMaster[index].title);
+    document.getElementById('tab-link-2').style.pointerEvents = "auto";
+    document.getElementById('tab-link-2').style.cursor = "pointer";
     reloadTasks();
 }
 
@@ -69,11 +71,11 @@ function selectTask(index) {
         }
         selectedTask = index;
         $('#taskSelection').html('Selected: ' + listMaster[selectedList].tasks[selectedTask].name);
+        document.getElementsByClassName('editTask')[0].style.visibility = "visible";
     } else {
         $('#T'+index).removeClass('taskSelected');
-        
         selectedTask = undefined;
-        $('#taskSelection').html('Selected: None');
+        document.getElementsByClassName('editTask')[0].style.visibility = "hidden";
     }
 }
 

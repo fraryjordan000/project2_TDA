@@ -18,9 +18,14 @@ var listMaster;
 var listContainer;
 var taskContainer;
 
-function loadContainers() {
+function loadPage() {
     listContainer = $('#listContainer');
     taskContainer = $('#taskContainer');
+
+    document.getElementById('tab-link-2').style.pointerEvents = "none";
+    document.getElementById('tab-link-2').style.cursor = "default";
+
+    document.getElementsByClassName('editTask')[0].style.visibility = "hidden";
 }
 
 function loadLists() {
